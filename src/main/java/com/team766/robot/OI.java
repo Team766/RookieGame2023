@@ -5,6 +5,7 @@ import com.team766.framework.Context;
 import com.team766.hal.JoystickReader;
 import com.team766.hal.RobotProvider;
 import com.team766.logging.Category;
+import com.team766.robot.mechanisms.Drive;
 import com.team766.robot.procedures.*;
 import edu.wpi.first.wpilibj.DriverStation;
 
@@ -26,10 +27,13 @@ public class OI extends Procedure {
 	}
 
 	public void run(final Context context) {
+		context.takeOwnership(Robot.drive);
 		while (true) {
 			// wait for driver station data (and refresh it using the WPILib APIs)
 			context.waitFor(() -> RobotProvider.instance.hasNewDriverStationData());
 			RobotProvider.instance.refreshDriverStationData();
+
+			Robot.drive.arcadeDrive(joystick0.getAxis(1), joystick1.getAxis(0));
 
 			// Add driver controls here - make sure to take/release ownership
 			// of mechanisms when appropriate.
