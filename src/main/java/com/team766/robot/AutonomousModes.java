@@ -16,5 +16,11 @@ public class AutonomousModes {
 		new AutonomousMode("DriveStraight", () -> new DriveStraight()),
 
 		new AutonomousMode("DoNothing", () -> new DoNothing()),
+
+		new AutonomousMode("TurnRight", () -> new TurnRight()),
+
+		new AutonomousMode("TurnLeft", () -> new TurnLeft()),
+
+		new AutonomousMode("DriveSquare", () -> new DriveSquare())
 	};
 }
