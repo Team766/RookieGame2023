@@ -17,7 +17,9 @@ public class Drive extends Mechanism {
 		checkContextOwnership();
 
 		leftMotor.set(leftPower);
-		rightMotor.set(rightPower);
+
+		// Motor spins the wrong direction.
+		rightMotor.set(-rightPower);
 		
 	}
 }
