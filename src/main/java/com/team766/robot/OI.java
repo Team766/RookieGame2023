@@ -15,27 +15,36 @@ import edu.wpi.first.wpilibj.DriverStation;
 public class OI extends Procedure {
 	private JoystickReader joystick0;
 	private JoystickReader joystick1;
-	private JoystickReader joystick2;
 
 	public OI() {
 		loggerCategory = Category.OPERATOR_INTERFACE;
 
 		joystick0 = RobotProvider.instance.getJoystick(0);
 		joystick1 = RobotProvider.instance.getJoystick(1);
-		joystick2 = RobotProvider.instance.getJoystick(2);
 	}
 
 	public void run(final Context context) {
 		context.takeOwnership(Robot.drive);
 		while (true) {
 			// joystick 0 should be forward and backward.
-			// joystick 1 should be turning left and right.
-			// axis 1 is forward backward, axis 0 is left right.
-			double leftMotorPower = -joystick1.getAxis(0) + joystick0.getAxis(1);
-			double rightMotorPower = joystick1.getAxis(0) + joystick0.getAxis(1);
+			// joystick (1 for 2 joysticks, 0 for one controller) should be turning left and right.
+			// axis 1 is forward backward, axis (0 for 2 joysticks, 2 for one controller) is left right.
+			double leftMotorPower = -joystick0.getAxis(2) + joystick0.getAxis(1);
+			// Use this for just a controller.
+			double rightMotorPower = joystick0.getAxis(2) + joystick0.getAxis(1);
 			
-			//leftMotorPower = 0 * joystick0.getAxis(1);
-		    //rightMotorPower = joystick1.getAxis(1);
+			//leftMotorPower = joystick0.getAxis(1);
+		    //rightMotorPower = joystick0.getAxis(3);
+
+			// use b for kicker
+			double kickPower;
+			if (joystick0.getButtonPressed(1)) {
+				kickPower = 0.25;
+			} else {
+				kickPower = 0;
+			}
+
+			Robot.kicker.kick(kickPower);
 
 			Robot.drive.setDrivePower(leftMotorPower, rightMotorPower);
 
