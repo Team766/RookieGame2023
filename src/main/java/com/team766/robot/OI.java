@@ -36,17 +36,22 @@ public class OI extends Procedure {
 			//leftMotorPower = joystick0.getAxis(1);
 		    //rightMotorPower = joystick0.getAxis(3);
 
-			// use b for kicker
-			double kickPower;
-			if (joystick0.getButtonPressed(1)) {
-				kickPower = 0.25;
+			// use rt for "boost"
+			// rt is button 8.
+			double speedMultiplier;
+			if (joystick0.getButton(8)) {
+				speedMultiplier = 1.0;
 			} else {
-				kickPower = 0;
+				speedMultiplier = 0.5;
 			}
 
-			Robot.kicker.kick(kickPower);
+			leftMotorPower *= speedMultiplier;
+			rightMotorPower *= speedMultiplier;
 
 			Robot.drive.setDrivePower(leftMotorPower, rightMotorPower);
+
+			// use b for kicker
+			// use joystick0.getButtonPressed(3) so that it will kick when the button is first pressed.
 
 			// wait for driver station data (and refresh it using the WPILib APIs)
 			context.waitFor(() -> RobotProvider.instance.hasNewDriverStationData());
