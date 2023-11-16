@@ -15,6 +15,7 @@ public class Kicker extends Mechanism {
 	// Pull the kicker back to prepare it to kick.
 	public void prepare () {
 		checkContextOwnership();
+		// Pull the motor back until it reaches right before unlatching.
 	}
 
 	// Pull the kicker back a tiny bit, unlatching it and letting it fall, kicking forward.
