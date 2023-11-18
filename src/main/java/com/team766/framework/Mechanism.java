@@ -89,4 +89,6 @@ public abstract class Mechanism extends LoggingBase {
 
 	public void run() {
 	}
+
+	public void setKickPower(double d) {}
 }
