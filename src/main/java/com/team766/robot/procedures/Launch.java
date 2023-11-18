@@ -6,12 +6,11 @@ import com.team766.framework.Context;
 
 public class Launch extends Procedure{
 	public void run(Context context){
-		context.takeOwnership(Robot.drive);
+		context.takeOwnership(Robot.launcher);
 
-		Robot.drive.setDrivePower(0.25, -0.25);
-
-		context.waitForSeconds(3.0);
-
-		Robot.drive.setDrivePower(0.0, 0.0);
+		Robot.launcher.setPusher(true);
+		context.waitForSeconds(0.25);
+		Robot.launcher.setPusher(false);
+		context.waitForSeconds(0.25);
 	}
 }

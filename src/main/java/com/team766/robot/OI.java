@@ -33,7 +33,7 @@ public class OI extends Procedure {
 			Robot.drive.setArcadeDrivePower(joystick0.getAxis(1), joystick1.getAxis(1));
 
 			if (joystick0.getButtonPressed(1)) {
-				context.startAsync(new Launch());
+				context.startAsync(new Kick());
 			}
 
 			context.waitFor(() -> RobotProvider.instance.hasNewDriverStationData());
