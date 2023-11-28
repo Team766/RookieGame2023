@@ -15,7 +15,7 @@ public class Drive extends Mechanism{
 
 	public void setDrivePower(double leftPower, double rightPower) {
 		checkContextOwnership();
-
+		
 		leftMotor.set(leftPower);
 		rightMotor.set(rightPower);
 	}
