@@ -25,6 +25,7 @@ public class OI extends Procedure {
 
 	public void run(final Context context) {
 		context.takeOwnership(Robot.drive);
+		context.takeOwnership(Robot.kicker);
 		while (true) {
 			// joystick 0 should be forward and backward.
 			// joystick (1 for 2 joysticks, 0 for one controller) should be turning left and right.
@@ -52,6 +53,8 @@ public class OI extends Procedure {
 
 			// use b for kicker
 			// use joystick0.getButtonPressed(3) so that it will kick when the button is first pressed.
+
+			Robot.kicker.kick(joystick0.getButtonPressed(3));
 
 			// wait for driver station data (and refresh it using the WPILib APIs)
 			context.waitFor(() -> RobotProvider.instance.hasNewDriverStationData());

@@ -19,8 +19,13 @@ public class Kicker extends Mechanism {
 	}
 
 	// Pull the kicker back a tiny bit, unlatching it and letting it fall, kicking forward.
-	public void kick () {
+	public void kick (boolean buttonPressed) {
 		checkContextOwnership();
+		if (buttonPressed) {
+			kickerMotor.set(0.25);
+		} else {
+			kickerMotor.set(0);
+		}
 	}
 
 	// public void resetEncoder () {
