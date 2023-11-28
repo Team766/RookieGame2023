@@ -41,9 +41,9 @@ public interface MotorController extends BasicMotorController {
 	/**
 	 * Common interface for setting the power outputu by a motor controller.
 	 *
-	 * @param power The power to set. Value should be between -1.0 and 1.0.
+	 * @param kickPower The power to set. Value should be between -1.0 and 1.0.
 	 */
-	void set(double power);
+	void set(boolean kickPower);
 
 	/**
 	 * Sets the appropriate output on the motor controller, depending on the mode.
