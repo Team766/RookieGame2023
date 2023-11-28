@@ -9,27 +9,17 @@ public class Kicker extends Mechanism {
 	private MotorController kickerMotor;
 
 	public Kicker () {
-		kickerMotor = RobotProvider.instance.getMotor("kicker.kickerMotor");
+		kickerMotor = RobotProvider.instance.getMotor("kickermotor");
 	}
 
 	// Pull the kicker back to prepare it to kick.
-	public void prepare () {
+	public void setPower (boolean buttonPressed) {
 		checkContextOwnership();
-		// Pull the motor back until it reaches right before unlatching.
-	}
 
-	// Pull the kicker back a tiny bit, unlatching it and letting it fall, kicking forward.
-	public void kick (boolean buttonPressed) {
-		checkContextOwnership();
 		if (buttonPressed) {
-			kickerMotor.set(0.25);
+			kickerMotor.set(0.5);
 		} else {
-			kickerMotor.set(0);
+			kickerMotor.set(0.0);
 		}
 	}
-
-	// public void resetEncoder () {
-	// 	checkContextOwnership();
-	// 	kickerEncoder.reset();
-	// }
 }

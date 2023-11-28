@@ -54,7 +54,7 @@ public class OI extends Procedure {
 			// use b for kicker
 			// use joystick0.getButtonPressed(3) so that it will kick when the button is first pressed.
 
-			Robot.kicker.kick(joystick0.getButtonPressed(3));
+			Robot.kicker.setPower(joystick0.getButton(3));
 
 			// wait for driver station data (and refresh it using the WPILib APIs)
 			context.waitFor(() -> RobotProvider.instance.hasNewDriverStationData());
