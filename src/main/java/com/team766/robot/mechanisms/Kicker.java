@@ -9,7 +9,7 @@ public class Kicker extends Mechanism{
 	public Kicker() {
 		kickMotor = RobotProvider.instance.getMotor("kick.kickMotor");
 	}
-	public void setKickPower(boolean kickPower) {
+	public void setKickPower(double kickPower) {
 		checkContextOwnership();
 
 		kickMotor.set(kickPower);
