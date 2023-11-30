@@ -42,7 +42,7 @@ public class OI extends Procedure {
 			Robot.drive.setDrivePower(joystick0.getAxis(1) * 2, joystick1.getAxis(1) * 2);
 
 			if (joystick0.getButtonPressed(1)) {
-				Robot.kick.setKickPower(10);
+				Robot.kick.setKickPower(1.0 * 10);
 			}
 
 			context.waitFor(() -> RobotProvider.instance.hasNewDriverStationData());
