@@ -40,10 +40,11 @@ public class OI extends Procedure {
 			    "  J0 B3: " + joystick0.getButton(3));
 
 			Robot.drive.setDrivePower(joystick0.getAxis(1) * 2, joystick1.getAxis(1) * 2);
-
-			if (joystick0.getButtonPressed(1)) {
-				Robot.kick.setKickPower(1.0);
-			}
+			
+			Robot.kick.setKickPower(joystick0.getAxis(3) * 2);
+			//if (joystick0.getButtonPressed(1)) {
+			//	Robot.kick.setKickPower(1.0);
+			//}
 
 			context.waitFor(() -> RobotProvider.instance.hasNewDriverStationData());
 		}
