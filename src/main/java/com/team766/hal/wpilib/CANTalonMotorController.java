@@ -196,4 +196,10 @@ public class CANTalonMotorController extends BaseCTREMotorController implements 
 		m_device.setNeutralMode(neutralMode);
 	}
 
+	@Override
+	public void set(boolean kickPower) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

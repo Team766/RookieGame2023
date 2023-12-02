@@ -41,7 +41,12 @@ public class OI extends Procedure {
 
 			Robot.drive.setDrivePower(joystick0.getAxis(1) * 2, joystick1.getAxis(1) * 2);
 			
-			Robot.kick.setKickPower(joystick0.getAxis(3) * 2);
+			//Robot.kick.setKickPower(joystick0.getAxis(2) * 2);
+			if(joystick0.getButton(1)){
+				Robot.kick.setKickPower(0.5);
+			}else{
+				Robot.kick.setKickPower(0);
+			}
 			//if (joystick0.getButtonPressed(1)) {
 			//	Robot.kick.setKickPower(1.0);
 			//}

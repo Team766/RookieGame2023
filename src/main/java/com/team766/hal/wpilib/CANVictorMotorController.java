@@ -192,4 +192,10 @@ public class CANVictorMotorController extends BaseCTREMotorController implements
 	public void restoreFactoryDefault() {
 		errorCodeToException(ExceptionTarget.LOG, m_device.configFactoryDefault());
 	}
+
+	@Override
+	public void set(boolean kickPower) {
+		// TODO Auto-generated method stub
+		
+	}
 }

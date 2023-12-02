@@ -287,4 +287,10 @@ public class LocalMotorController implements MotorController {
 	public void setClosedLoopRamp(final double secondsFromNeutralToFull) {
 		LoggerExceptionUtils.logException(new UnsupportedOperationException("setClosedLoopRamp() is currently unsupported by LocalMotorController"));
 	}
+
+	@Override
+	public void set(boolean kickPower) {
+		// TODO Auto-generated method stub
+		
+	}
 }

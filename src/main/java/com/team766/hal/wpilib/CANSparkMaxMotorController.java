@@ -248,4 +248,10 @@ public class CANSparkMaxMotorController extends CANSparkMax implements MotorCont
 	public void setClosedLoopRamp(final double secondsFromNeutralToFull) {
 		revErrorToException(ExceptionTarget.LOG, setClosedLoopRampRate(secondsFromNeutralToFull));
 	}
+
+	@Override
+	public void set(boolean kickPower) {
+		// TODO Auto-generated method stub
+		
+	}
 }

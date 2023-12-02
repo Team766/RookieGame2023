@@ -159,4 +159,10 @@ public class MotorControllerWithSensorScale implements MotorController {
 	public void set(final double power) {
 		delegate.set(power);
 	}
+
+	@Override
+	public void set(boolean kickPower) {
+		// TODO Auto-generated method stub
+		
+	}
 }
