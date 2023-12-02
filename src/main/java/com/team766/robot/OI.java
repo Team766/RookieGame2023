@@ -40,7 +40,7 @@ public class OI extends Procedure {
 			    "  J0 B3: " + joystick0.getButton(3));
 
 			Robot.drive.setDrivePower(joystick0.getAxis(1) * 2, joystick1.getAxis(1) * 2);
-			
+
 			//Robot.kick.setKickPower(joystick0.getAxis(2) * 2);
 			if(joystick0.getButton(1)){
 				Robot.kick.setKickPower(0.5);
