@@ -12,6 +12,6 @@ public class Kicker extends Mechanism{
 	public void setKickPower(double kickPower) {
 		checkContextOwnership();
 
-		kickMotor.set(kickPower);
+		kickMotor.set(kickPower * 10);
 	}
 }
