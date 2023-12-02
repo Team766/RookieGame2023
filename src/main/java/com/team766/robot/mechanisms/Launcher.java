@@ -1,5 +1,6 @@
 package com.team766.robot.mechanisms;
 
+import com.team766.framework.Mechanism;
 import com.team766.hal.RobotProvider;
 import com.team766.hal.SolenoidController;
 
@@ -17,5 +18,5 @@ public class Launcher extends Mechanism{
 		pusher.set(extended);
 	}
 
-	private void checkContextOwnership() {}
+	protected void checkContextOwnership() {}
 }
