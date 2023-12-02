@@ -12,7 +12,7 @@ public class AutonomousModes {
 		// define one or more different autonomous modes with it like this:
 		//    new AutonomousMode("DriveFast", () -> new DriveStraight(1.0)),
 		//    new AutonomousMode("DriveSlow", () -> new DriveStraight(0.4)),
-
+		new AutonomousMode("SafeZone", () -> new SafeZone()),
 		new AutonomousMode("DoNothing", () -> new DoNothing()),
 		new AutonomousMode("TurnRight", () -> new TurnRight()),
 		new AutonomousMode("DriveStraight", () -> new DriveStraight()),
